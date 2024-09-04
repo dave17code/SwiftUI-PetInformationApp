@@ -55,7 +55,6 @@ struct ContentView: View {
                         Text("- 엎드려(앉아와 자주 혼동함)")
                         Text("- 하우스(집으로 들어가기)")
                     }
-                    
                     VStack(alignment: .leading, spacing: 10) {
                         Text("- 손")
                         Text("- 코")
@@ -69,6 +68,39 @@ struct ContentView: View {
                     .opacity(0.2)
                     .shadow(radius: 5)
             )
+            ScrollView(.horizontal) {
+                HStack {
+                    Image("dog1")
+                        .resizable()
+                        .frame(width: 160, height: 160)
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.teal, lineWidth: 4)
+                        )
+                    Image("dog2")
+                        .resizable()
+                        .frame(width: 160, height: 160)
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.blue, lineWidth: 4)
+                        )
+                    Image("dog3")
+                        .resizable()
+                        .frame(width: 160, height: 160)
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.pink, lineWidth: 4)
+                        )
+                }
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.yellow)
+                        .shadow(radius: 5)
+                )
+            }
+            .scrollIndicators(.hidden)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
         }
         .padding()
     }
